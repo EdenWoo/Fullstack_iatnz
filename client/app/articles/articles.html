@@ -1,0 +1,100 @@
+
+
+<!--p ng-bind-html=article.item.content></p> -->
+
+ <div class="main">
+      <div class="container">
+        <ul class="breadcrumb">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="javascript:;">Category</a></li>
+            <li class="active">Articles</li>
+        </ul>
+        <!-- BEGIN SIDEBAR & CONTENT -->
+        <div class="row margin-bottom-40">
+
+         <!-- BEGIN INPUT FORM -->
+		<form>
+		  <div class="form-group row">
+		    <label for="inputurl" class="col-sm-2 form-control-label label-left">Input Image Url</label>
+		    <div class="col-sm-10">
+		      <input ng-model="url" type="textarea" class="form-control" id="inputurl" placeholder="input url">
+		    </div>
+		  </div>
+		  <div class="form-group row">
+		    <label for="inputTitle" class="col-sm-2 form-control-label label-left">Input Title</label>
+		    <div class="col-sm-10">
+		      <input ng-model="newArticle.item.title" type="textarea" class="form-control" id="inputTitle" placeholder="input Title">
+		    </div>
+		  </div>
+
+		  <div class="form-group row">
+		    <label for="inputArticle" class="col-sm-2 form-control-label label-left">Input Article</label>
+		    <div class="col-sm-10">
+		    	<textarea ng-model="newArticle.item.content" class="form-control" id="inputArticle" rows="3"></textarea>
+		      
+		    </div>
+		  </div>
+
+		  <div class="form-group row">
+		    <div class="col-sm-offset-2 col-sm-10">
+		      <button ng-click="addArticle()" type="submit" class="btn btn-success">Add article</button>
+		    </div>
+		  </div>
+		</form>
+		<!-- END INPUT FORM -->
+
+		<br/>
+		<br/>
+          <div class="col-md-12 col-sm-12" ng-repeat="article in articles">
+            <div class="content-page">
+              <div class="row">
+                <!-- BEGIN LEFT SIDEBAR -->            
+                <div class="col-md-9 col-sm-9">
+                  <div class="row" >
+                    <div class="col-md-4 col-sm-4">
+	                  	<img class="img-center center-block" src="{{article.item.images[0].url}}"  alt="{{}}" height="90%" width="90%"/>          
+                    </div>
+                    <div class="col-md-8 col-sm-8">
+                      <h4><a href="#">{{article.item.title}}</a></h4>
+                      <ul class="blog-info">
+                        <li><i class="fa fa-calendar"></i>{{article.item.gmt_create}}</li>
+                        <li><i class="fa fa-comments"></i>{{article.item.comment_count}}</li>
+                        <li><i class="fa fa-tags"></i>yimin</li>
+                      </ul>
+
+                      <p>At vero eos et accusamus et-------</p>
+                      <button ng-click="gotoArticle(article)"  class="btn btn-success">Read More</button>
+                      <button ng-click="deleteArticle(article)" class="btn btn-warning">Delete Article</button>
+                      
+                    </div>
+                  </div>
+                  <hr class="blog-post-sep">
+                </div>
+                <!-- END LEFT SIDEBAR --> 
+              </div>
+            </div>
+          </div>
+          <!-- END CONTENT -->
+        </div>
+        <!-- END SIDEBAR & CONTENT -->
+      </div>
+    </div>
+ 			
+ <!--
+	<md-content>
+	    <md-list>
+	      <md-subheader class="md-no-sticky">3 line item</md-subheader>
+	      <md-list-item ng-repeat="article in articleses" ng-click="addarticles()" class="md-3-line">
+	        <img ng-src="{{article.item.images[0].url}}" class="md-avatar" alt="" />
+	        <div class="md-list-item-text" layout="column">
+	          <h3>{{article.item.title}}</h3>
+	          <h4>{{article.item.title}}</h4>
+	          <p>{{article.item.title}}</p>
+
+	        </div>
+	      </md-list-item>
+	    </md-list>
+   </md-content>
+-->
+
+
