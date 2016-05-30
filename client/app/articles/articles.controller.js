@@ -2,7 +2,7 @@
 'use strict';
  
 angular.module('fullstackIatnzApp')
-.controller('ArticlesCtrl', function ($scope, ArticleService,socket) {
+.controller('ArticlesCtrl', function ($scope,$state, ArticleService,socket) {
 
 	$scope.url='';
 	$scope.newArticle={};
@@ -20,10 +20,17 @@ angular.module('fullstackIatnzApp')
 		});
 	}
 
-	$scope.deleteArticle=function(){
-
+	$scope.deleteArticle=function(article){
+		ArticleService.delete({id: article._id},function(article){
+			console.log(article);
+		});
 	}
 
+	$scope.gotoArticle=function(article){
+		$state.go('article',{
+			id:article._id
+		});
+	}
 	
 	ArticleService.query(function(articles){
 	 	$scope.articles=articles;
