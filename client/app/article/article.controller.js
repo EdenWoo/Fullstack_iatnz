@@ -7,4 +7,8 @@ angular.module('fullstackIatnzApp')
     	$scope.article=article;
     });
 
+	$scope.goBack=function(){
+		window.history.back();
+	};
   });
+ 

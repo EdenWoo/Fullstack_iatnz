@@ -4,19 +4,19 @@
 angular.module('fullstackIatnzApp')
 .controller('ArticlesCtrl', function ($scope,$state, ArticleService,socket) {
 
-	$scope.url='';
-	$scope.newArticle={};
-	$scope.newArticle.item={};
-	$scope.newArticle.item.images=[];
+	//$scope.url='';
+	//$scope.newArticle={};
+	//$scope.newArticle.item={};
+	//$scope.newArticle.item.images=[];
 
 	$scope.addArticle=function(){
 
-		$scope.newArticle.item.images.push($scope.url);
-		$scope.newArticle.item.images.push("");
+		//$scope.newArticle.item.images.push($scope.url);
+		//$scope.newArticle.item.images.push("");
 		console.log($scope.newArticle);
 
 		ArticleService.save($scope.newArticle,function(article){
-			console.log(article);
+			$scope.newArticle={};
 		});
 	}
 
